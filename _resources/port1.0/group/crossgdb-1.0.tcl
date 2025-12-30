@@ -128,10 +128,6 @@ proc crossgdb.setup {target version} {
             reinplace -q {/^install:/s/ .*//} ${worksrcpath}/libiberty/Makefile.in
         }
 
-        # gdb is not supported on macOS ARM now
-        # See https://inbox.sourceware.org/gdb/3185c3b8-8a91-4beb-a5d5-9db6afb93713@Spark
-        supported_archs x86_64 i386
-
         # Needs C++11; halfway redundant due to the blacklist above, but make
         # sure selected compiler supports the standard - getting rid of old
         # Apple GCC versions and the like?
